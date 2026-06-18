@@ -1,0 +1,173 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Interstellar Quote Sticker",
+      "price": 99,
+      "category": "Movies",
+      "description": "Inspirational quote sticker inspired by Interstellar movie.",
+      "image": "/images/interstellar.jpg",
+      "stock": 50,
+      "rating": 4.8,
+      "sizes": ["Small", "Medium", "Large"]
+    },
+    {
+      "id": 2,
+      "title": "Batman Logo Sticker",
+      "price": 149,
+      "category": "Movies",
+      "description": "Premium Batman logo sticker with high quality finish.",
+      "image": "/images/batman.jpg",
+      "stock": 40,
+      "rating": 4.7,
+      "sizes": ["Small", "Medium", "Large"]
+    },
+    {
+      "id": 3,
+      "title": "Dark Knight Quote Sticker",
+      "price": 119,
+      "category": "Movies",
+      "description": "Famous Dark Knight quote sticker for movie lovers.",
+      "image": "/images/darkknight.jpg",
+      "stock": 30,
+      "rating": 4.6,
+      "sizes": ["Small", "Medium", "Large"]
+    },
+    {
+      "id": 4,
+      "title": "Inception Dream Sticker",
+      "price": 129,
+      "category": "Movies",
+      "description": "Creative dream concept sticker inspired by Inception.",
+      "image": "/images/inception.jpg",
+      "stock": 25,
+      "rating": 4.5,
+      "sizes": ["Small", "Medium", "Large"]
+    },
+    {
+      "id": 5,
+      "title": "Never Give Up Sticker",
+      "price": 79,
+      "category": "Quotes",
+      "description": "Motivational sticker to inspire everyday success.",
+      "image": "/images/motivation.jpg",
+      "stock": 100,
+      "rating": 4.9,
+      "sizes": ["Small", "Medium"]
+    },
+    {
+      "id": 6,
+      "title": "Success Is A Journey Sticker",
+      "price": 89,
+      "category": "Quotes",
+      "description": "Positive mindset quote sticker for your workspace.",
+      "image": "/images/success.jpg",
+      "stock": 60,
+      "rating": 4.7,
+      "sizes": ["Small", "Medium"]
+    },
+    {
+      "id": 7,
+      "title": "Minimal Mountain Wall Sticker",
+      "price": 299,
+      "category": "Wall Art",
+      "description": "Minimal mountain design for home decoration.",
+      "image": "/images/mountain.jpg",
+      "stock": 20,
+      "rating": 4.8,
+      "sizes": ["Medium", "Large"]
+    },
+    {
+      "id": 8,
+      "title": "Nature Landscape Wall Sticker",
+      "price": 349,
+      "category": "Wall Art",
+      "description": "Beautiful nature landscape wallpaper sticker.",
+      "image": "/images/nature.jpg",
+      "stock": 15,
+      "rating": 4.9,
+      "sizes": ["Medium", "Large"]
+    },
+    {
+      "id": 9,
+      "title": "Premium Marvel Collection",
+      "price": 499,
+      "category": "Premium",
+      "description": "Exclusive premium Marvel sticker collection.",
+      "image": "/images/marvel.jpg",
+      "stock": 10,
+      "rating": 5,
+      "sizes": ["Large"]
+    },
+    {
+      "id": 10,
+      "title": "Premium Movie Quotes Pack",
+      "price": 599,
+      "category": "Premium",
+      "description": "Collection of premium movie quote stickers.",
+      "image": "/images/moviepack.jpg",
+      "stock": 12,
+      "rating": 4.9,
+      "sizes": ["Large"]
+    },
+    {
+      "id": 11,
+      "title": "Anime Hero Sticker",
+      "price": 139,
+      "category": "Anime",
+      "description": "Anime hero themed premium sticker.",
+      "image": "/images/anime.jpg",
+      "stock": 70,
+      "rating": 4.6,
+      "sizes": ["Small", "Medium"]
+    },
+    {
+      "id": 12,
+      "title": "Samurai Anime Sticker",
+      "price": 159,
+      "category": "Anime",
+      "description": "Japanese samurai inspired anime sticker.",
+      "image": "/images/samurai.jpg",
+      "stock": 45,
+      "rating": 4.7,
+      "sizes": ["Small", "Medium"]
+    },
+    {
+      "id": 13,
+      "title": "Custom Name Sticker",
+      "price": 199,
+      "category": "Custom",
+      "description": "Create your own personalized name sticker.",
+      "image": "/images/custom-name.jpg",
+      "stock": 100,
+      "rating": 5,
+      "sizes": ["Small", "Medium", "Large"]
+    },
+    {
+      "id": 14,
+      "title": "Custom Logo Sticker",
+      "price": 249,
+      "category": "Custom",
+      "description": "Upload your logo and create custom stickers.",
+      "image": "/images/custom-logo.jpg",
+      "stock": 80,
+      "rating": 4.9,
+      "sizes": ["Small", "Medium", "Large"]
+    },
+    {
+      "id": 15,
+      "title": "Premium Quote Bundle",
+      "price": 799,
+      "category": "Premium",
+      "description": "Complete premium motivational quote sticker bundle.",
+      "image": "/images/premium-bundle.jpg",
+      "stock": 8,
+      "rating": 5,
+      "sizes": ["Large"]
+    }
+  ],
+
+  "users": [],
+
+  "orders": []
+}
