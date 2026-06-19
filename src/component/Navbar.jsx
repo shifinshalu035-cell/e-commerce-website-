@@ -6,30 +6,30 @@ function Navbar() {
 <div className="flex flex-col items-center">
   <Link
     to="/"
-    className="text-3xl font-bold text-red-500"
+    className="text-2xl font-bold text-red-500"
   >
     Stickora
   </Link>
 
-  <div className="w-20 h-2 border-b-4 border-red-500 rounded-full"></div>
+  <div className="w-20 h-2 border-b-4 border-red-500 rounded-full "></div>
 </div>
       <div className="flex gap-6">
-      <Link to="/" className="hover:text-red-500 transition">Home</Link>
+      <Link to="/" className="hover:text-red-500 transition poppins-font">Home</Link>
 
       
 
-      <Link to="/register" className="hover:text-red-500 transition">Register</Link>
+      <Link to="/register" className="hover:text-red-500 transition poppins-font">Register</Link>
 
       
-      <Link to= "/premium" className="hover:text-red-500 transition"> Premium </Link>
-      <Link to="/customize" className="hover:text-red-500 transition">Customize </Link>
-      <Link to="/checkout" className="hover:text-red-500 transition" >Checkout</Link>
-      <Link to="/orders" className="hover:text-red-500 transiton"> Orders</Link>
+      <Link to= "/premium" className="hover:text-red-500 transition poppins-font "> Premium </Link>
+      <Link to="/customize" className="hover:text-red-500 transition poppins-font">Customize </Link>
+      <Link to="/checkout" className="hover:text-red-500 transition poppins-font" >Checkout</Link>
+      <Link to="/orders" className="hover:text-red-500 transiton poppins-font"> Orders</Link>
      </div>
      <div className="flex gap-6">
-      <Link to="/cart" className="hover:text-red-500 transition"> Cart 🛒 </Link>
-      <Link to="/wishlist " className="hover:text-red-500 transition"> Wishlist ❤️ </Link>
-      <Link to="/login" className="hover:text-red-500 transition">Login</Link>
+      <Link to="/cart" className="hover:text-red-500 transition poppins-font"> Cart 🛒 </Link>
+      <Link to="/wishlist " className="hover:text-red-500 transition poppins-font"> Wishlist ❤️ </Link>
+      <Link to="/login" className="hover:text-red-500 transition poppins-font">Login</Link>
      </div>
 
     </nav>
