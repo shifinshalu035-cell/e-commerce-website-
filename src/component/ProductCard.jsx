@@ -40,7 +40,7 @@ function ProductCard({ product }) {
         </button>
 
        </div>
-       <Link to={`/products/${products.id}`} className="block mt-3 bg-black text-white text-center py-2 rounded ">
+       <Link to={`/products/${product.id}`} className="block mt-3 bg-black text-white text-center py-2 rounded ">
          view deatails 
        </Link>
 
