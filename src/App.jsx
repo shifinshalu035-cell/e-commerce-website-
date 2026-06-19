@@ -1,3 +1,4 @@
+import FontTest from "./component/FontTextpage";
 import Navbar from "./component/Navbar";
 import AppRoutes from "./route/AppRoute";
 
@@ -6,6 +7,7 @@ function App() {
     <>
       <Navbar />
       <AppRoutes />
+      
     </>
   );
 }

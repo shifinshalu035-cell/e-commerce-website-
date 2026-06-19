@@ -3,15 +3,16 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <nav className=" bg-black text-white flex items-center justify-between px-8 py-4 sticky  top-0 z-50">
+<div className="flex flex-col items-center">
+  <Link
+    to="/"
+    className="text-3xl font-bold text-red-500"
+  >
+    Stickora
+  </Link>
 
-      <div>
-     <Link
-     to="/"
-     className="inline-block text-3xl font-bold text-red-500 hover:scale-110 transition-transform duration-300"
->
-  Stickora
-    </Link>
-      </div>
+  <div className="w-20 h-2 border-b-4 border-red-500 rounded-full"></div>
+</div>
       <div className="flex gap-6">
       <Link to="/" className="hover:text-red-500 transition">Home</Link>
 
