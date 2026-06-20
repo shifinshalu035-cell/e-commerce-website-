@@ -1,43 +1,15 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;700&family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;600&family=Raleway:wght@300;400;500;600;700&family=Fredoka:wght@300;400;500;600;700&family=Bangers&family=Lobster&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;600&family=Raleway:wght@300;400;500;600;700&family=Fredoka:wght@300;400;500;600;700&family=Bangers&family=Lobster&display=swap');
+@import "tailwindcss";
 
 .logo-font {
   font-family: 'Bebas Neue', sans-serif;
 }
 
+.pixel-font {
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
 .poppins-font {
   font-family: 'Poppins', sans-serif;
-}
-
-.playfair-font {
-  font-family: 'Playfair Display', serif;
-}
-
-.cinzel-font {
-  font-family: 'Cinzel', serif;
-}
-
-.montserrat-font {
-  font-family: 'Montserrat', sans-serif;
-}
-
-.oswald-font {
-  font-family: 'Oswald', sans-serif;
-}
-
-.raleway-font {
-  font-family: 'Raleway', sans-serif;
-}
-
-.fredoka-font {
-  font-family: 'Fredoka', sans-serif;
-}
-
-.bangers-font {
-  font-family: 'Bangers', cursive;
-}
-
-.lobster-font {
-  font-family: 'Lobster', cursive;
 }

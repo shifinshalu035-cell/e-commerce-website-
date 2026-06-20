@@ -13,18 +13,18 @@ function Navbar() {
 
   <div className="w-20 h-2 border-b-4 border-red-500 rounded-full "></div>
 </div>
-      <div className="flex gap-6">
-      <Link to="/" className="hover:text-red-500 transition poppins-font">Home</Link>
+      <div className="flex gap-6 pixel-font">
+      <Link to="/" className="hover:text-red-500 transition ">Home</Link>
 
       
 
-      <Link to="/register" className="hover:text-red-500 transition poppins-font">Register</Link>
+      <Link to="/register" className="hover:text-red-500 transition ">Register</Link>
 
       
-      <Link to= "/premium" className="hover:text-red-500 transition poppins-font "> Premium </Link>
-      <Link to="/customize" className="hover:text-red-500 transition poppins-font">Customize </Link>
-      <Link to="/checkout" className="hover:text-red-500 transition poppins-font" >Checkout</Link>
-      <Link to="/orders" className="hover:text-red-500 transiton poppins-font"> Orders</Link>
+      <Link to= "/premium" className="hover:text-red-500 transition  "> Premium </Link>
+      <Link to="/customize" className="hover:text-red-500 transition ">Customize </Link>
+      <Link to="/checkout" className="hover:text-red-500 transition " >Checkout</Link>
+      <Link to="/orders" className="hover:text-red-500 transiton "> Orders</Link>
      </div>
      <div className="flex gap-6">
       <Link to="/cart" className="hover:text-red-500 transition poppins-font"> Cart 🛒 </Link>

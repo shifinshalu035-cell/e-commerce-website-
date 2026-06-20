@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 function FontTest() {
   return (
     <div className="space-y-4 p-6">
@@ -9,6 +10,15 @@ function FontTest() {
       <h1 className="fredoka-font text-5xl">Fredoka</h1>
       <h1 className="bangers-font text-5xl">Bangers</h1>
       <h1 className="lobster-font text-5xl">Lobster</h1>
+      <h1 className="pixel-font text-5xl">
+  PIXEL TEST
+</h1>
+<Link
+  to="/"
+  style={{ fontFamily: "Pixelify Sans" }}
+>
+  Home
+</Link>
     </div>
   );
 }
