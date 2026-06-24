@@ -7,43 +7,114 @@ import { addToWishlist } from "../redux/slices/wishlistSlice";
 
 function ProductCard({ product }) {
   const dispatch = useDispatch();
-  const [image,setImage] = useState(product.images[0]);
 
+  const [image, setImage] = useState(
+    Array.isArray(product.image)
+      ? product.image[0]
+      : product.image
+  );
+
+  const [cartAdded, setCartAdded] = useState(false);
+  const [wishlistAdded, setWishlistAdded] = useState(false);
 
   const handleCart = () => {
     dispatch(addToCart(product));
+
+    setCartAdded(true);
+
+    setTimeout(() => {
+      setCartAdded(false);
+    }, 2000);
   };
 
   const handleWishlist = () => {
     dispatch(addToWishlist(product));
+
+    setWishlistAdded(true);
+
+    setTimeout(() => {
+      setWishlistAdded(false);
+    }, 2000);
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-4 hover:shadow-2xl transition">
-      <div>
-        onMouseEnter{()=> setImage(product.image[1])}
-        onMouseLeave{()=> setImage(product.image[0])}
-       <img src={product.image} alt={product.title} className="w-full h-52 object-cover rounded-lg" />
-       </div>
-       <h3 className="text-xl font-bold mt-3">{product.title}</h3>
-       <p className="text-gray-500">{product.category}</p>
-       <p className="text-2xl font-bold text-green-600"> ₹{product.price}</p>
-       <div className="flex gap-2 mt-3">
-        <button onClick={handleWishlist}
-        className="bg-pink-500 text-white px-3 py-2 rounded  ">
+    <div className="bg-white rounded-xl shadow-lg p-4 hover:shadow-2xl transition duration-300">
+      
+      
+      <div
+        onMouseEnter={() => {
+          if (
+            Array.isArray(product.image) &&
+            product.image[1]
+          ) {
+            setImage(product.image[1]);
+          }
+        }}
+        onMouseLeave={() => {
+          setImage(
+            Array.isArray(product.image)
+              ? product.image[0]
+              : product.image
+          );
+        }}
+      >
+        <img
+          src={image}
+          alt={product.title}
+          className="w-full h-56 object-cover rounded-lg"
+        />
+      </div>
+
+      
+      <h3 className="text-xl font-bold mt-4">
+        {product.title}
+      </h3>
+
+      <p className="text-gray-500">
+        {product.category}
+      </p>
+
+      <p className="text-2xl font-bold text-green-600 mt-2">
+        ₹{product.price}
+      </p>
+
+      
+      <div className="flex gap-3 mt-4">
+        <button
+          onClick={handleWishlist}
+          className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-lg"
+        >
           ❤️
-
         </button>
-        <button className="bg-pink-500 text-white px-3 py-2 rounded " onClick={handleCart}>
+
+        <button
+          onClick={handleCart}
+          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg"
+        >
           🛒
-
         </button>
+      </div>
 
-       </div>
-       <Link to={`/products/${product.id}`} className="block mt-3 bg-black text-white text-center py-2 rounded ">
-         view deatails 
-       </Link>
+      
+      {wishlistAdded && (
+        <p className="text-pink-500 mt-3 text-sm">
+          Added to Wishlist ❤️
+        </p>
+      )}
 
+      {cartAdded && (
+        <p className="text-green-500 mt-2 text-sm">
+          Added to Cart 🛒
+        </p>
+      )}
+
+      
+      <Link
+        to={`/product/${product.id}`}
+        className="block mt-4 bg-black text-white text-center py-2 rounded-lg hover:bg-gray-800"
+      >
+        View Details
+      </Link>
     </div>
   );
 }

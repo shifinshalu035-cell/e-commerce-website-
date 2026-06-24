@@ -24,11 +24,11 @@ function Home() {
 
       <CategorySection />
 
-      <h1 className="text-3xl font-bold text-center my-8">
+      <h1 className="text-3xl  text-yellow-400 font-bold text-center my-8 pixel-font " id="future">
         Our Featured Products
       </h1>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4" >
         {products.map((product) => (
           <ProductCard
             key={product.id}

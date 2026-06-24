@@ -10,7 +10,7 @@ import CustomizeSticker from "../pages/CustomizeSticker";
 import Checkout from "../pages/Checkout";
 import Orders from "../pages/Orders";
 import ProductDetails from "../pages/ProductDetails";
-
+import CategoryPage from "../pages/Category";
 function AppRoutes() {
   return (
     <Routes>
@@ -34,6 +34,10 @@ function AppRoutes() {
       <Route path="/checkout" element={<Checkout />} />
 
       <Route path="/orders" element={<Orders />} />
+      <Route
+  path="/category/:category"
+  element={<CategoryPage />}
+/>
 
       <Route
         path="/product/:id"

@@ -6,12 +6,12 @@ function Navbar() {
 <div className="flex flex-col items-center">
   <Link
     to="/"
-    className="text-2xl font-bold text-red-500"
+    className="text-2xl font-bold text-red-500 pixel-font"
   >
     Stickora
   </Link>
 
-  <div className="w-20 h-2 border-b-4 border-red-500 rounded-full "></div>
+  {/* <div className="w-20 h-2 border-b-4 border-red-500 rounded-full "></div> */}
 </div>
       <div className="flex gap-6 pixel-font">
       <Link to="/" className="hover:text-red-500 transition ">Home</Link>
@@ -26,10 +26,10 @@ function Navbar() {
       <Link to="/checkout" className="hover:text-red-500 transition " >Checkout</Link>
       <Link to="/orders" className="hover:text-red-500 transiton "> Orders</Link>
      </div>
-     <div className="flex gap-6">
-      <Link to="/cart" className="hover:text-red-500 transition poppins-font"> Cart 🛒 </Link>
-      <Link to="/wishlist " className="hover:text-red-500 transition poppins-font"> Wishlist ❤️ </Link>
-      <Link to="/login" className="hover:text-red-500 transition poppins-font">Login</Link>
+     <div className="flex gap-6 pixel-font">
+      <Link to="/cart" className="hover:text-red-500 transition "> Cart 🛒 </Link>
+      <Link to="/wishlist " className="hover:text-red-500 transition "> Wishlist ❤️ </Link>
+      <Link to="/login" className="hover:text-red-500 transition">Login</Link>
      </div>
 
     </nav>

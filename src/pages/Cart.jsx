@@ -1,74 +1,73 @@
-// // import { useSelector } from "react-redux";
-
-// // function Cart() {
-// //   const cartItems = useSelector(
-// //     (state) => state.cart.cartItems
-// //   );
-
-// //   return (
-// //     <div>
-// //       <h1>Cart Page</h1>
-
-// //       {cartItems.map((item) => (
-// //         <div key={item.id}>
-// //           <h3>{item.title}</h3>
-// //           <p>₹{item.price}</p>
-// //         </div>
-// //       ))}
-// //     </div>
-// //   );
-// // }
-
-// // export default Cart;
-// import { useSelector } from "react-redux";
-
-// function Cart() {
-//   const cart = useSelector((state) => state.cart);
-
-//   return (
-//     <div>
-//       <h1>Cart Page</h1>
-
-//       <pre>
-//         {JSON.stringify(cart, null, 2)}
-//       </pre>
-//     </div>
-//   );
-// }
-
-// export default Cart;
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart } from "../redux/slices/cartSlice";
 
 function Cart() {
   const dispatch = useDispatch();
+
   const cartItems = useSelector(
     (state) => state.cart.cartItems
   );
+
   const total = cartItems.reduce(
-  (sum, item) => sum + item.price,
-  0
-);
+    (sum, item) => sum + item.price,
+    0
+  );
 
   return (
-    <div>
-      <h1>Cart Page</h1>
+    <div className="max-w-5xl mx-auto p-6">
+      <h1 className="text-4xl font-bold mb-8">
+        Shopping Cart
+      </h1>
 
       {cartItems.length === 0 ? (
-        <h3>Your Cart Is Empty</h3>
+        <div className="text-center py-10">
+          <h2 className="text-2xl font-semibold">
+            Your Cart Is Empty 🛒
+          </h2>
+        </div>
       ) : (
-        cartItems.map((item) => (
-          <div key={item.id}>
-            <h3>{item.title}</h3>
-            <p>₹{item.price}</p>
+        <>
+          <div className="space-y-4">
+            {cartItems.map((item) => (
+              <div
+                key={item.id}
+                className="flex items-center gap-6 border rounded-lg p-4 shadow-md"
+              >
+                <img
+                  src={item.image[0]}
+                  alt={item.title}
+                  className="w-32 h-32 object-cover rounded-lg"
+                />
+
+                <div className="flex-1">
+                  <h2 className="text-xl font-semibold">
+                    {item.title}
+                  </h2>
+
+                  <p className="text-gray-600 mt-2">
+                    ₹{item.price}
+                  </p>
+                </div>
+
+                <button
+                  onClick={() =>
+                    dispatch(removeFromCart(item.id))
+                  }
+                  className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+                >
+                  Remove
+                </button>
+              </div>
+            ))}
           </div>
-        ))
+
+          <div className="mt-8 border-t pt-6">
+            <h2 className="text-2xl font-bold">
+              Total: ₹{total}
+            </h2>
+          </div>
+        </>
       )}
-      <button onClick={()=> dispatch(removeFromCart(item.id))}>
-        remove 
-        
-      </button>
-      <h2>Total:₹{total}</h2>
     </div>
   );
 }
