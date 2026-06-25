@@ -1,22 +1,47 @@
-import { useSelector } from "react-redux";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function Orders() {
-  const orders = useSelector(
-    (state) => state.orders?.orders || []
-  );
+  const [orders, setOrders] = useState([]);
+
+  useEffect(() => {
+    fetchOrders();
+  }, []);
+
+  const fetchOrders = async () => {
+    const user = JSON.parse(
+      localStorage.getItem("user")
+    );
+
+    if (!user) {
+      return;
+    }
+
+    try {
+      const res = await axios.get(
+        `http://localhost:3002/orders?userId=${user.id}`
+      );
+      console.log("Orders:", res.data);
+
+      setOrders(res.data);
+    } catch (error) {
+      console.log(error);
+      alert("Failed to fetch orders");
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">
       <div className="max-w-5xl mx-auto">
 
         <h1 className="text-4xl font-bold mb-8">
-          My Orders
+          My Orders 📦
         </h1>
 
         {orders.length === 0 ? (
           <div className="bg-white rounded-xl shadow-lg p-10 text-center">
             <h2 className="text-2xl font-semibold mb-4">
-              No Orders Yet 📦
+              No Orders Yet
             </h2>
 
             <p className="text-gray-500">
@@ -35,7 +60,7 @@ function Orders() {
 
               {order.items.map((item) => (
                 <div
-                  key={item.id}
+                  key={item.productId}
                   className="flex items-center gap-4 border-b py-4"
                 >
                   <img
@@ -56,6 +81,10 @@ function Orders() {
                     <p className="text-gray-500">
                       ₹{item.price}
                     </p>
+
+                    <p className="text-sm text-gray-400">
+                      Quantity: {item.quantity || 1}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -66,7 +95,7 @@ function Orders() {
                 </h3>
 
                 <span className="bg-green-100 text-green-700 px-4 py-2 rounded-full">
-                  Processing
+                  {order.status || "Processing"}
                 </span>
               </div>
             </div>

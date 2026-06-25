@@ -1,12 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import { useState } from "react";
-
-import { addToCart } from "../redux/slices/cartSlice";
-import { addToWishlist } from "../redux/slices/wishlistSlice";
+import axios from "axios";
 
 function ProductCard({ product }) {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [image, setImage] = useState(
@@ -19,29 +15,7 @@ function ProductCard({ product }) {
   const [wishlistAdded, setWishlistAdded] =
     useState(false);
 
-  const handleCart = () => {
-    const user = JSON.parse(
-      localStorage.getItem("user")
-    );
-
-    console.log("User:", user);
-
-    if (!user) {
-      alert("Please login first");
-      navigate("/Login");
-      return;
-    }
-
-    dispatch(addToCart(product));
-
-    setCartAdded(true);
-
-    setTimeout(() => {
-      setCartAdded(false);
-    }, 2000);
-  };
-
-  const handleWishlist = () => {
+  const handleCart = async () => {
     const user = JSON.parse(
       localStorage.getItem("user")
     );
@@ -52,13 +26,66 @@ function ProductCard({ product }) {
       return;
     }
 
-    dispatch(addToWishlist(product));
+    try {
+      const cartItem = {
+        userId: user.id,
+        productId: product.id,
+        title: product.title,
+        price: product.price,
+        image: product.image,
+        quantity: 1,
+      };
 
-    setWishlistAdded(true);
+      await axios.post(
+        "http://localhost:3002/cart",
+        cartItem
+      );
 
-    setTimeout(() => {
-      setWishlistAdded(false);
-    }, 2000);
+      setCartAdded(true);
+
+      setTimeout(() => {
+        setCartAdded(false);
+      }, 2000);
+    } catch (error) {
+      console.log(error);
+      alert("Cart adding failed");
+    }
+  };
+
+  const handleWishlist = async () => {
+    const user = JSON.parse(
+      localStorage.getItem("user")
+    );
+
+    if (!user) {
+      alert("Please login first");
+      navigate("/login");
+      return;
+    }
+
+    try {
+      const wishlistItem = {
+        userId: user.id,
+        productId: product.id,
+        title: product.title,
+        price: product.price,
+        image: product.image,
+      };
+
+      await axios.post(
+        "http://localhost:3002/wishlist",
+        wishlistItem
+      );
+
+      setWishlistAdded(true);
+
+      setTimeout(() => {
+        setWishlistAdded(false);
+      }, 2000);
+    } catch (error) {
+      console.log(error);
+      alert("Wishlist adding failed");
+    }
   };
 
   return (

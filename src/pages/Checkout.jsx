@@ -1,6 +1,6 @@
 import { useNavigate, Navigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function Checkout() {
   const navigate = useNavigate();
@@ -8,14 +8,32 @@ function Checkout() {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
+  const [cartItems, setCartItems] = useState([]);
 
   const user = JSON.parse(
     localStorage.getItem("user")
   );
 
-  const cartItems = useSelector(
-    (state) => state.cart.cartItems
-  );
+  useEffect(() => {
+    fetchCart();
+  }, []);
+
+ const fetchCart = async () => {
+  if (!user) return;
+
+  try {
+    const res = await axios.get(
+      `http://localhost:3002/cart?userId=${user.id}`
+    );
+
+    console.log("User ID:", user.id);
+    console.log("Cart Data:", res.data);
+
+    setCartItems(res.data);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
   const total = cartItems.reduce(
     (sum, item) =>
@@ -23,21 +41,48 @@ function Checkout() {
     0
   );
 
-  const handleOrder = () => {
+  const handleOrder = async () => {
     if (!name || !address || !phone) {
       alert("Please fill all fields");
       return;
     }
 
-    navigate("/order-success");
+    try {
+      const orderData = {
+        userId: user.id,
+        customerName: name,
+        address: address,
+        phone: phone,
+        items: cartItems,
+        total: total,
+        status: "Processing",
+      };
+
+      await axios.post(
+        "http://localhost:3002/orders",
+        orderData
+      );
+
+      // Clear cart after order
+      for (const item of cartItems) {
+        await axios.delete(
+          `http://localhost:3002/cart/${item.id}`
+        );
+      }
+
+      alert("Order Placed Successfully ✅");
+
+      navigate("/order-success");
+    } catch (error) {
+      console.log(error);
+      alert("Failed to place order");
+    }
   };
 
-  // Redirect to login if not logged in
   if (!user) {
     return <Navigate to="/login" />;
   }
 
-  // Prevent checkout with empty cart
   if (cartItems.length === 0) {
     return (
       <div className="text-center mt-20">
@@ -152,7 +197,7 @@ function Checkout() {
           onClick={handleOrder}
           className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition"
         >
-          Place Order
+          Place Order 
         </button>
 
       </div>
