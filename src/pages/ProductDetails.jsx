@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams,useNavigate} from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -10,6 +10,12 @@ function ProductDetails() {
   const { id } = useParams();
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  
+  const handleBuyNow =()=>{
+    dispatch(addToCart(product));
+    navigate("/checkout");
+  }
 
   const [product, setProduct] = useState(null);
 
@@ -21,7 +27,7 @@ function ProductDetails() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/products/${id}`)
+      .get(`http://localhost:3002/products/${id}`)
       .then((res) => {
         setProduct(res.data);
       })
@@ -117,6 +123,9 @@ function ProductDetails() {
               {cartAdded
                 ? "✅ Added To Cart"
                 : "🛒 Add To Cart"}
+            </button>
+            <button onClick={handleBuyNow} className="px-6 py-6 rounded-lg bg-blue-600 transition ">
+              ⚡Buy now
             </button>
 
           </div>

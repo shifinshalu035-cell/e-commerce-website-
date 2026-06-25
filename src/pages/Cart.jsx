@@ -1,15 +1,21 @@
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart } from "../redux/slices/cartSlice";
+import { useNavigate } from "react-router-dom";
 
 function Cart() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handlePlace =() =>{
+    navigate("/checkout")
+  }
 
   const cartItems = useSelector(
     (state) => state.cart.cartItems
   );
 
   const total = cartItems.reduce(
-    (sum, item) => sum + item.price,
+    (sum, item) => sum + item.price *(item.quantity || 1),
     0
   );
 
@@ -56,6 +62,9 @@ function Cart() {
                   className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
                 >
                   Remove
+                </button>
+                <button onClick={handlePlace} className=" bg-green-500 border px-4 py-2 rounded  text-white  hover:bg-green-400">
+                  place order
                 </button>
               </div>
             ))}

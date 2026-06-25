@@ -37,7 +37,7 @@ function HeroSection() {
           gamers and collectors.
         </p>
  <div className="flex gap-4">
-  <button
+  <button className="bg-red-600  hover:bg-white/40 px-8 py-3 rounded-lg transition duration-300 pixel-font"
   onClick={() =>
     document
       .getElementById("future")

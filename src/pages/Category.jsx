@@ -10,7 +10,7 @@ function CategoryPage() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/products")
+      .get("http://localhost:3002/products")
       .then((response) => {
         const filteredProducts = response.data.filter(
           (product) => product.category === category
@@ -24,17 +24,23 @@ function CategoryPage() {
   }, [category]);
 
   return (
-  <div className="p-8">
-    <h1>{category} Stickers</h1>
+  <div className="p-8 bg-black min-h-screen">
+    <h1 className="text-4xl font-bold text-white mb-4 capitalize">
+      {category} Stickers
+    </h1>
 
-    <p>Total Products: {products.length}</p>
+    <p className="text-gray-400 mb-8">
+      Total Products: {products.length}
+    </p>
 
-    {products.map((product) => (
-      <div key={product.id}>
-        <h2>{product.title}</h2>
-        <p>{product.category}</p>
-      </div>
-    ))}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {products.map((product) => (
+        <ProductCard
+          key={product.id}
+          product={product}
+        />
+      ))}
+    </div>
   </div>
 );
 }

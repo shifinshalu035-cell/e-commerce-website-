@@ -11,9 +11,14 @@ import Checkout from "../pages/Checkout";
 import Orders from "../pages/Orders";
 import ProductDetails from "../pages/ProductDetails";
 import CategoryPage from "../pages/Category";
+import OrderSuccess from "../pages/OrderSuccess";
 function AppRoutes() {
   return (
     <Routes>
+      <Route
+  path="/order-success"
+  element={<OrderSuccess />}
+/>
       <Route path="/" element={<Home />} />
 
       <Route path="/login" element={<Login />} />
@@ -42,6 +47,7 @@ function AppRoutes() {
       <Route
         path="/product/:id"
         element={<ProductDetails />}
+        
       />
     </Routes>
   );

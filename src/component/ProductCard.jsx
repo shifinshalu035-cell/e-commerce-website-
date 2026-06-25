@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 
@@ -7,6 +7,7 @@ import { addToWishlist } from "../redux/slices/wishlistSlice";
 
 function ProductCard({ product }) {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [image, setImage] = useState(
     Array.isArray(product.image)
@@ -15,9 +16,22 @@ function ProductCard({ product }) {
   );
 
   const [cartAdded, setCartAdded] = useState(false);
-  const [wishlistAdded, setWishlistAdded] = useState(false);
+  const [wishlistAdded, setWishlistAdded] =
+    useState(false);
 
   const handleCart = () => {
+    const user = JSON.parse(
+      localStorage.getItem("user")
+    );
+
+    console.log("User:", user);
+
+    if (!user) {
+      alert("Please login first");
+      navigate("/Login");
+      return;
+    }
+
     dispatch(addToCart(product));
 
     setCartAdded(true);
@@ -28,6 +42,16 @@ function ProductCard({ product }) {
   };
 
   const handleWishlist = () => {
+    const user = JSON.parse(
+      localStorage.getItem("user")
+    );
+
+    if (!user) {
+      alert("Please login first");
+      navigate("/login");
+      return;
+    }
+
     dispatch(addToWishlist(product));
 
     setWishlistAdded(true);
@@ -38,9 +62,7 @@ function ProductCard({ product }) {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-4 hover:shadow-2xl transition duration-300">
-      
-      
+    <div className="bg-blend-lighten rounded-xl shadow-lg p-4 hover:shadow-2xl transition duration-300">
       <div
         onMouseEnter={() => {
           if (
@@ -65,12 +87,11 @@ function ProductCard({ product }) {
         />
       </div>
 
-      
-      <h3 className="text-xl font-bold mt-4">
+      <h3 className="text-xl font-bold mt-4 pixel-font">
         {product.title}
       </h3>
 
-      <p className="text-gray-500">
+      <p className="text-gray-500 pixel-font">
         {product.category}
       </p>
 
@@ -78,7 +99,6 @@ function ProductCard({ product }) {
         ₹{product.price}
       </p>
 
-      
       <div className="flex gap-3 mt-4">
         <button
           onClick={handleWishlist}
@@ -95,7 +115,6 @@ function ProductCard({ product }) {
         </button>
       </div>
 
-      
       {wishlistAdded && (
         <p className="text-pink-500 mt-3 text-sm">
           Added to Wishlist ❤️
@@ -108,7 +127,6 @@ function ProductCard({ product }) {
         </p>
       )}
 
-      
       <Link
         to={`/product/${product.id}`}
         className="block mt-4 bg-black text-white text-center py-2 rounded-lg hover:bg-gray-800"
