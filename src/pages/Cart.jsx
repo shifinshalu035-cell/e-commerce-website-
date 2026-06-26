@@ -136,9 +136,9 @@ setCartItems(res.data);
             <div className="mt-6 flex justify-center">
               <button
                 onClick={handlePlace}
-                className="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600"
+                className="bg-amber-300 text-white px-6 py-3 rounded-lg hover:bg-green-600"
               >
-                Place Order 🚀
+                Place Order
               </button>
             </div>
           </div>

@@ -225,6 +225,37 @@
       "sizes": [
         "Large"
       ]
+    },
+    {
+      "id": "25",
+      "title": "anime action base sticker",
+      "price": 140,
+      "category": "Anime",
+      "description": "good quality anime action stickers",
+      "image": [
+        "/anime/anime -1.png",
+        "/anime/a1.1.png",
+        "/anime/anime-1.2.png",
+        "/anime/anime-1.3.png",
+        "/anime/anime-1.4.png"
+      ],
+      "stock": 10,
+      "rating": 5,
+      "sizes": [
+        "Large"
+      ]
+    },
+    {
+      "id": "26",
+      "title": "anime cute sticker",
+      "price": 60,
+      "category": "Anime",
+      "description": "good quality anime action stickers",
+      "image": [
+        "/anime/anime-2.png",
+        "/anime/anime-2.1.png",
+        "/anime/anime-2.2.png"
+      ]
     }
   ],
   "users": [
@@ -236,14 +267,612 @@
     },
     {
       "name": "whhh",
-      "email": "whh@gamil.com",
+      "email": "whh@gmail.com",
       "password": "12345",
       "id": "59gJyfKfmtg"
+    },
+    {
+      "name": "shifin",
+      "email": "shf@123.com",
+      "password": "1234",
+      "id": "DWUpVa4z274"
+    },
+    {
+      "name": "man",
+      "email": "man@123",
+      "password": "12345",
+      "id": "GrOtmnZ3JZg"
     }
   ],
-  "orders": [],
-  "cart":[],
-  "whishlist":[],
-  
+  "cart": [
+    {
+      "userId": "59gJyfKfmtg",
+      "productId": "2",
+      "title": "Batman Logo Sticker",
+      "price": 149,
+      "image": [
+        "/cinema/movie-2 copy.jpg",
+        "/cinema/movie-2.1 copy.jpg"
+      ],
+      "quantity": 1,
+      "id": "xdwDtGGNIc8"
+    },
+    {
+      "userId": "GrOtmnZ3JZg",
+      "productId": "25",
+      "title": "anime action base sticker",
+      "price": 140,
+      "image": [
+        "/anime/anime -1.png",
+        "anime/a1.1.png",
+        "anime/anime-1.2.png",
+        "anime/anime-1.3.png",
+        "anime/anime-1.4.png"
+      ],
+      "quantity": 1,
+      "id": "_VdSzCSzfpM"
+    },
+    {
+      "userId": "DWUpVa4z274",
+      "productId": "4",
+      "title": "Inception Dream Sticker",
+      "price": 129,
+      "image": [
+        "/cinema/movie-3 copy.jpg",
+        "/cinema/movie-4.jpg"
+      ],
+      "quantity": 1,
+      "id": "QDQrhv5ng2U"
+    },
+    {
+      "userId": "GrOtmnZ3JZg",
+      "productId": "3",
+      "title": "Dark Knight Quote Sticker",
+      "price": 119,
+      "image": [
+        "/cinema/movie-2.1.jpg",
+        "/cinema/movie-2.2.jpg"
+      ],
+      "quantity": 1,
+      "id": "scQiTjMVAKo"
+    },
+    {
+      "userId": "GrOtmnZ3JZg",
+      "productId": "2",
+      "title": "Batman Logo Sticker",
+      "price": 149,
+      "image": [
+        "/cinema/movie-2 copy.jpg",
+        "/cinema/movie-2.1 copy.jpg"
+      ],
+      "quantity": 1,
+      "id": "49i2zFvWFoE"
+    },
+    {
+      "userId": "GrOtmnZ3JZg",
+      "productId": "3",
+      "title": "Dark Knight Quote Sticker",
+      "price": 119,
+      "image": [
+        "/cinema/movie-2.1.jpg",
+        "/cinema/movie-2.2.jpg"
+      ],
+      "quantity": 1,
+      "id": "kWMqAjPGsxs"
+    },
+    {
+      "userId": "GrOtmnZ3JZg",
+      "productId": "2",
+      "title": "Batman Logo Sticker",
+      "price": 149,
+      "image": [
+        "/cinema/movie-2 copy.jpg",
+        "/cinema/movie-2.1 copy.jpg"
+      ],
+      "quantity": 1,
+      "id": "H9g6D9IrwNo"
+    },
+    {
+      "userId": "GrOtmnZ3JZg",
+      "productId": "3",
+      "title": "Dark Knight Quote Sticker",
+      "price": 119,
+      "image": [
+        "/cinema/movie-2.1.jpg",
+        "/cinema/movie-2.2.jpg"
+      ],
+      "quantity": 1,
+      "id": "uCVy1wap-rw"
+    },
+    {
+      "userId": "GrOtmnZ3JZg",
+      "productId": "3",
+      "title": "Dark Knight Quote Sticker",
+      "price": 119,
+      "image": [
+        "/cinema/movie-2.1.jpg",
+        "/cinema/movie-2.2.jpg"
+      ],
+      "quantity": 1,
+      "id": "MDC5kx7VEPQ"
+    },
+    {
+      "userId": "v2jMTTw27B4",
+      "productId": "2",
+      "title": "Batman Logo Sticker",
+      "price": 149,
+      "image": [
+        "/cinema/movie-2 copy.jpg",
+        "/cinema/movie-2.1 copy.jpg"
+      ],
+      "quantity": 1,
+      "id": "ssU-c49HXhc"
+    },
+    {
+      "userId": "v2jMTTw27B4",
+      "productId": "2",
+      "title": "Batman Logo Sticker",
+      "price": 149,
+      "image": [
+        "/cinema/movie-2 copy.jpg",
+        "/cinema/movie-2.1 copy.jpg"
+      ],
+      "quantity": 1,
+      "id": "UjLbPIbuemg"
+    }
+  ],
+  "wishlist": [
+    {
+      "userId": "v2jMTTw27B4",
+      "productId": "3",
+      "title": "Dark Knight Quote Sticker",
+      "price": 119,
+      "image": [
+        "/cinema/movie-2.1.jpg",
+        "/cinema/movie-2.2.jpg"
+      ],
+      "id": "SUAKLm5YH_o"
+    },
+    {
+      "userId": "59gJyfKfmtg",
+      "productId": "2",
+      "title": "Batman Logo Sticker",
+      "price": 149,
+      "image": [
+        "/cinema/movie-2 copy.jpg",
+        "/cinema/movie-2.1 copy.jpg"
+      ],
+      "id": "6LPkbm5MKMg"
+    },
+    {
+      "userId": "DWUpVa4z274",
+      "productId": "2",
+      "title": "Batman Logo Sticker",
+      "price": 149,
+      "image": [
+        "/cinema/movie-2 copy.jpg",
+        "/cinema/movie-2.1 copy.jpg"
+      ],
+      "id": "lq6XZ-rybcA"
+    },
+    {
+      "userId": "DWUpVa4z274",
+      "productId": "3",
+      "title": "Dark Knight Quote Sticker",
+      "price": 119,
+      "image": [
+        "/cinema/movie-2.1.jpg",
+        "/cinema/movie-2.2.jpg"
+      ],
+      "id": "43stPIqLiMA"
+    },
+    {
+      "userId": "DWUpVa4z274",
+      "productId": "4",
+      "title": "Inception Dream Sticker",
+      "price": 129,
+      "image": [
+        "/cinema/movie-3 copy.jpg",
+        "/cinema/movie-4.jpg"
+      ],
+      "id": "3UdiBh7EXMA"
+    },
+    {
+      "userId": "DWUpVa4z274",
+      "productId": "4",
+      "title": "Inception Dream Sticker",
+      "price": 129,
+      "image": [
+        "/cinema/movie-3 copy.jpg",
+        "/cinema/movie-4.jpg"
+      ],
+      "id": "qJjDqwphW_E"
+    },
+    {
+      "userId": "DWUpVa4z274",
+      "productId": "4",
+      "title": "Inception Dream Sticker",
+      "price": 129,
+      "image": [
+        "/cinema/movie-3 copy.jpg",
+        "/cinema/movie-4.jpg"
+      ],
+      "id": "VRJRF2CkCME"
+    },
+    {
+      "userId": "v2jMTTw27B4",
+      "productId": "2",
+      "title": "Batman Logo Sticker",
+      "price": 149,
+      "image": [
+        "/cinema/movie-2 copy.jpg",
+        "/cinema/movie-2.1 copy.jpg"
+      ],
+      "id": "3e7dLA63JKQ"
+    },
+    {
+      "userId": "v2jMTTw27B4",
+      "productId": "2",
+      "title": "Batman Logo Sticker",
+      "price": 149,
+      "image": [
+        "/cinema/movie-2 copy.jpg",
+        "/cinema/movie-2.1 copy.jpg"
+      ],
+      "id": "aNk7G0-gxlI"
+    },
+    {
+      "userId": "v2jMTTw27B4",
+      "productId": "2",
+      "title": "Batman Logo Sticker",
+      "price": 149,
+      "image": [
+        "/cinema/movie-2 copy.jpg",
+        "/cinema/movie-2.1 copy.jpg"
+      ],
+      "id": "zdLQ_81_swI"
+    },
+    {
+      "userId": "v2jMTTw27B4",
+      "productId": "2",
+      "title": "Batman Logo Sticker",
+      "price": 149,
+      "image": [
+        "/cinema/movie-2 copy.jpg",
+        "/cinema/movie-2.1 copy.jpg"
+      ],
+      "id": "CEsK-mtTgKw"
+    },
+    {
+      "userId": "v2jMTTw27B4",
+      "productId": "2",
+      "title": "Batman Logo Sticker",
+      "price": 149,
+      "image": [
+        "/cinema/movie-2 copy.jpg",
+        "/cinema/movie-2.1 copy.jpg"
+      ],
+      "id": "KVM4zGC-meo"
+    },
+    {
+      "userId": "v2jMTTw27B4",
+      "productId": "2",
+      "title": "Batman Logo Sticker",
+      "price": 149,
+      "image": [
+        "/cinema/movie-2 copy.jpg",
+        "/cinema/movie-2.1 copy.jpg"
+      ],
+      "id": "_PrOSMArpe4"
+    },
+    {
+      "userId": "v2jMTTw27B4",
+      "productId": "2",
+      "title": "Batman Logo Sticker",
+      "price": 149,
+      "image": [
+        "/cinema/movie-2 copy.jpg",
+        "/cinema/movie-2.1 copy.jpg"
+      ],
+      "id": "O3JDgQoCl_g"
+    },
+    {
+      "userId": "v2jMTTw27B4",
+      "productId": "2",
+      "title": "Batman Logo Sticker",
+      "price": 149,
+      "image": [
+        "/cinema/movie-2 copy.jpg",
+        "/cinema/movie-2.1 copy.jpg"
+      ],
+      "id": "chMSWOHnpDQ"
+    },
+    {
+      "userId": "v2jMTTw27B4",
+      "productId": "2",
+      "title": "Batman Logo Sticker",
+      "price": 149,
+      "image": [
+        "/cinema/movie-2 copy.jpg",
+        "/cinema/movie-2.1 copy.jpg"
+      ],
+      "id": "T3_TJz_4aZM"
+    },
+    {
+      "userId": "v2jMTTw27B4",
+      "productId": "2",
+      "title": "Batman Logo Sticker",
+      "price": 149,
+      "image": [
+        "/cinema/movie-2 copy.jpg",
+        "/cinema/movie-2.1 copy.jpg"
+      ],
+      "id": "DoJQmCrXKAQ"
+    },
+    {
+      "userId": "v2jMTTw27B4",
+      "productId": "2",
+      "title": "Batman Logo Sticker",
+      "price": 149,
+      "image": [
+        "/cinema/movie-2 copy.jpg",
+        "/cinema/movie-2.1 copy.jpg"
+      ],
+      "id": "J2gEGoEtY7Q"
+    },
+    {
+      "userId": "v2jMTTw27B4",
+      "productId": "2",
+      "title": "Batman Logo Sticker",
+      "price": 149,
+      "image": [
+        "/cinema/movie-2 copy.jpg",
+        "/cinema/movie-2.1 copy.jpg"
+      ],
+      "id": "S38Fp4Sp7cg"
+    },
+    {
+      "userId": "v2jMTTw27B4",
+      "productId": "3",
+      "title": "Dark Knight Quote Sticker",
+      "price": 119,
+      "image": [
+        "/cinema/movie-2.1.jpg",
+        "/cinema/movie-2.2.jpg"
+      ],
+      "id": "bOPQW1HjIp0"
+    },
+    {
+      "userId": "v2jMTTw27B4",
+      "productId": "2",
+      "title": "Batman Logo Sticker",
+      "price": 149,
+      "image": [
+        "/cinema/movie-2 copy.jpg",
+        "/cinema/movie-2.1 copy.jpg"
+      ],
+      "id": "fFheks4Jje0"
+    },
+    {
+      "userId": "v2jMTTw27B4",
+      "productId": "2",
+      "title": "Batman Logo Sticker",
+      "price": 149,
+      "image": [
+        "/cinema/movie-2 copy.jpg",
+        "/cinema/movie-2.1 copy.jpg"
+      ],
+      "id": "iHI2mRafT98"
+    },
+    {
+      "userId": "GrOtmnZ3JZg",
+      "productId": "3",
+      "title": "Dark Knight Quote Sticker",
+      "price": 119,
+      "image": [
+        "/cinema/movie-2.1.jpg",
+        "/cinema/movie-2.2.jpg"
+      ],
+      "id": "1DMXzqKhgiM"
+    },
+    {
+      "userId": "GrOtmnZ3JZg",
+      "productId": "2",
+      "title": "Batman Logo Sticker",
+      "price": 149,
+      "image": [
+        "/cinema/movie-2 copy.jpg",
+        "/cinema/movie-2.1 copy.jpg"
+      ],
+      "id": "H36s3nA3FmI"
+    }
+  ],
+  "orders": [
+    {
+      "userId": "DWUpVa4z274",
+      "customerName": "shifin shalu",
+      "address": "Odakkal house ,kuttamangalam , mandad po",
+      "phone": "08593983704",
+      "items": [
+        {
+          "id": "3",
+          "title": "Dark Knight Quote Sticker",
+          "price": 119,
+          "category": "Movies",
+          "image": [
+            "/cinema/movie-2.1.jpg",
+            "/cinema/movie-2.2.jpg"
+          ],
+          "quantity": 1
+        }
+      ],
+      "total": 119,
+      "status": "shipped",
+      "id": "E0eOyHftB_o"
+    },
+    {
+      "userId": "v2jMTTw27B4",
+      "customerName": "manu",
+      "address": "hjjadfsaeknsldlvkamsd",
+      "phone": "23456y7uio",
+      "items": [
+        {
+          "userId": "v2jMTTw27B4",
+          "productId": "7",
+          "title": "Classic Movie Sticker",
+          "price": 139,
+          "image": [
+            "/cinema/movie-9.jpg",
+            "/cinema/movie-9.jpg"
+          ],
+          "quantity": 1,
+          "id": "a4jYYdBE3iQ"
+        },
+        {
+          "userId": "v2jMTTw27B4",
+          "productId": "2",
+          "title": "Batman Logo Sticker",
+          "price": 149,
+          "image": [
+            "/cinema/movie-2 copy.jpg",
+            "/cinema/movie-2.1 copy.jpg"
+          ],
+          "quantity": 1,
+          "id": "_3v8sQsN_ac"
+        },
+        {
+          "userId": "v2jMTTw27B4",
+          "productId": "17",
+          "title": "Cricket Champion Sticker",
+          "price": 149,
+          "image": [
+            "/sports/sports-3.jpg",
+            "/sports/sports-4.jpg"
+          ],
+          "quantity": 1,
+          "id": "z7evlNM1k-Y"
+        }
+      ],
+      "total": 437,
+      "status": "Processing",
+      "id": "C09wuOy_TFw"
+    },
+    {
+      "userId": "v2jMTTw27B4",
+      "customerName": "manu",
+      "address": " jaefknkwesd",
+      "phone": "23456789",
+      "items": [
+        {
+          "userId": "v2jMTTw27B4",
+          "productId": "2",
+          "title": "Batman Logo Sticker",
+          "price": 149,
+          "image": [
+            "/cinema/movie-2 copy.jpg",
+            "/cinema/movie-2.1 copy.jpg"
+          ],
+          "quantity": 1,
+          "id": "zW1jmLS1J_s"
+        }
+      ],
+      "total": 149,
+      "status": "Processing",
+      "id": "uaHdTZxXrkA"
+    },
+    {
+      "userId": "GrOtmnZ3JZg",
+      "customerName": "manu",
+      "address": "gcvbhjnkml,;",
+      "phone": "1234567890",
+      "items": [
+        {
+          "userId": "GrOtmnZ3JZg",
+          "productId": "3",
+          "title": "Dark Knight Quote Sticker",
+          "price": 119,
+          "image": [
+            "/cinema/movie-2.1.jpg",
+            "/cinema/movie-2.2.jpg"
+          ],
+          "quantity": 1,
+          "id": "TFPFGNd17I8"
+        },
+        {
+          "userId": "GrOtmnZ3JZg",
+          "productId": "16",
+          "title": "Football Legend Sticker",
+          "price": 129,
+          "image": [
+            "/sports/sports-1.jpg",
+            "/sports/sports-2.jpg"
+          ],
+          "quantity": 1,
+          "id": "dk0iiAC47vM"
+        }
+      ],
+      "total": 248,
+      "status": "Processing",
+      "id": "FME4i4hOya0"
+    },
+    {
+      "userId": "GrOtmnZ3JZg",
+      "customerName": "qeajksmea",
+      "address": "fsjkcmw",
+      "phone": "eajfkm",
+      "items": [
+        {
+          "userId": "GrOtmnZ3JZg",
+          "productId": "2",
+          "title": "Batman Logo Sticker",
+          "price": 149,
+          "image": [
+            "/cinema/movie-2 copy.jpg",
+            "/cinema/movie-2.1 copy.jpg"
+          ],
+          "quantity": 1,
+          "id": "iPfU1U_UqU8"
+        }
+      ],
+      "total": 149,
+      "status": "Processing",
+      "id": "uRKbOEFbFqs"
+    },
+    {
+      "userId": "DWUpVa4z274",
+      "customerName": "shifin shalu",
+      "address": "Odakkal house ,kuttamangalam , mandad po",
+      "phone": "08593983704",
+      "items": [
+        {
+          "userId": "DWUpVa4z274",
+          "productId": "2",
+          "title": "Batman Logo Sticker",
+          "price": 149,
+          "image": [
+            "/cinema/movie-2 copy.jpg",
+            "/cinema/movie-2.1 copy.jpg"
+          ],
+          "quantity": 1,
+          "id": "T6ontdhjF7o"
+        },
+        {
+          "userId": "DWUpVa4z274",
+          "productId": "21",
+          "title": "Sports Premium Collection",
+          "price": 299,
+          "image": [
+            "/sports/sports-12.jpg",
+            "/sports/sports-13.jpg"
+          ],
+          "quantity": 1,
+          "id": "BApW0Ev0Mvs"
+        }
+      ],
+      "total": 448,
+      "status": "Processing",
+      "id": "AEgdRPtivhA"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

@@ -5,6 +5,7 @@ import CategorySection from "../component/CategorySection";
 import ProductCard from "../component/ProductCard";
 
 function Home() {
+  console.log("Home render")
   const [products, setProducts] = useState([]);
 
   useEffect(() => {

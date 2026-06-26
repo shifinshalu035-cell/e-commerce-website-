@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 
 function ProductCard({ product }) {
+  console.log("product card render");
   const navigate = useNavigate();
 
   const [image, setImage] = useState(
@@ -15,16 +16,21 @@ function ProductCard({ product }) {
   const [wishlistAdded, setWishlistAdded] =
     useState(false);
 
-  const handleCart = async () => {
+  
+  const handleCart = async (e) => {
+       e.stopPropagation ();
+  
     const user = JSON.parse(
       localStorage.getItem("user")
     );
 
     if (!user) {
-      alert("Please login first");
+      alert("Please Login First");
       navigate("/login");
       return;
     }
+    console.log("User ID:", user.id);
+console.log("Product ID:", product.id);
 
     try {
       const cartItem = {
@@ -36,6 +42,16 @@ function ProductCard({ product }) {
         quantity: 1,
       };
 
+      
+      const existing = await axios.get(
+        `http://localhost:3002/cart?userId=${user.id}&productId=${product.id}`
+      );
+
+      if (existing.data.length > 0) {
+        alert("Already in Cart 🛒");
+        return;
+      }
+
       await axios.post(
         "http://localhost:3002/cart",
         cartItem
@@ -45,25 +61,40 @@ function ProductCard({ product }) {
 
       setTimeout(() => {
         setCartAdded(false);
-      }, 2000);
+      }, 1000);
+
     } catch (error) {
       console.log(error);
-      alert("Cart adding failed");
+      alert("Failed to Add Cart");
     }
   };
 
-  const handleWishlist = async () => {
+  
+  const handleWishlist = async (e) => {
+     e.preventDefault ();
     const user = JSON.parse(
       localStorage.getItem("user")
     );
 
     if (!user) {
-      alert("Please login first");
+      alert("Please Login First");
       navigate("/login");
       return;
     }
 
     try {
+
+      
+      const existing = await axios.get(
+        `http://localhost:3002/wishlist?userId=${user.id}&productId=${product.id}`
+      );
+      console.log(existing.data);
+
+      if (existing.data.length > 0) {
+        alert("Already in Wishlist ❤️");
+        return;
+      }
+
       const wishlistItem = {
         userId: user.id,
         productId: product.id,
@@ -81,15 +112,17 @@ function ProductCard({ product }) {
 
       setTimeout(() => {
         setWishlistAdded(false);
-      }, 2000);
+      }, 1000);
+
     } catch (error) {
       console.log(error);
-      alert("Wishlist adding failed");
+      alert("Failed to Add Wishlist");
     }
   };
 
   return (
     <div className="bg-blend-lighten rounded-xl shadow-lg p-4 hover:shadow-2xl transition duration-300">
+
       <div
         onMouseEnter={() => {
           if (
@@ -107,11 +140,13 @@ function ProductCard({ product }) {
           );
         }}
       >
-        <img
-          src={image}
-          alt={product.title}
-          className="w-full h-56 object-cover rounded-lg"
-        />
+        <Link to={`/product/${product.id}`}>
+          <img
+            src={image}
+            alt={product.title}
+            className="w-full h-56 object-cover rounded-lg"
+          />
+        </Link>
       </div>
 
       <h3 className="text-xl font-bold mt-4 pixel-font">
@@ -127,7 +162,9 @@ function ProductCard({ product }) {
       </p>
 
       <div className="flex gap-3 mt-4">
+
         <button
+          type="button"
           onClick={handleWishlist}
           className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-lg"
         >
@@ -135,11 +172,13 @@ function ProductCard({ product }) {
         </button>
 
         <button
+        type="button"
           onClick={handleCart}
           className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg"
         >
           🛒
         </button>
+
       </div>
 
       {wishlistAdded && (
@@ -160,6 +199,7 @@ function ProductCard({ product }) {
       >
         View Details
       </Link>
+
     </div>
   );
 }

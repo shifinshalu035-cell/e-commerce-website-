@@ -88,7 +88,7 @@ src={Array.isArray(product.image)
     : product.image
             }
 alt={product.title}
-className="w-full h-[280px] object-cover rounded-xl"
+className="w-100 h-[280px] object-cover rounded-xl"
 
           />{
             Array.isArray(product.image) && (
@@ -198,7 +198,7 @@ ${ wishlistAdded
 
             >
 
-              ⚡ Buy Now
+               Buy Now
 
             </button>
 

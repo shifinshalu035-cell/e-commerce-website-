@@ -1,5 +1,18 @@
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 function HeroSection() {
+   const navigate = useNavigate();
+   const handleExplore = () =>{
+    const user = JSON.parse(localStorage.getItem("user"));
+    if(user){
+      document.getElementById("future")
+      ?.scrollIntoView({
+        behavior:"smooth",
+      });
+    }else{
+      navigate("/login")
+    }
+   }
   return (
     <section className="relative h-screen overflow-hidden">
 <video
@@ -48,13 +61,12 @@ function HeroSection() {
 >
   Shop Now
 </button>
-
-<Link
-  to="/Login"
+<button
+  onClick={handleExplore}
   className="bg-white/20 backdrop-blur-lg hover:bg-white/40 px-8 py-3 rounded-lg transition duration-300 pixel-font"
 >
   Explore
-</Link> 
+</button>
         </div>
 
       </div>

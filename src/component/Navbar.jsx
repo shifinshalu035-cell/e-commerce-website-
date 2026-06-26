@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { Link,useNavigate } from "react-router-dom";
 import axios from "axios";
 function Navbar(){
@@ -6,6 +6,7 @@ function Navbar(){
   const user = JSON.parse(localStorage.getItem("user"));
   const [search,setSearch] = useState("");
   const [results,setResults] = useState([]);
+ 
   const handleLogout = () =>{
     localStorage.removeItem("user");
     navigate("/login");
@@ -114,34 +115,42 @@ const handleSearch = async (e) => {
           to="/cart"
           className="hover:text-red-500 transition"
         >
-          Cart 🛒
+          Cart 
         </Link>
 
         <Link
           to="/wishlist"
           className="hover:text-red-500 transition"
         >
-          Wishlist ❤️
+          Wishlist 
         </Link>
 
-        {user ? (
-          <button
-            onClick={handleLogout}
-            className="hover:text-red-500 transition"
-          >
-            Logout
-          </button>
-        ) : (
-          <Link
-            to="/login"
-            className="hover:text-red-500 transition"
-          >
-            Login
-          </Link>
-        )}
+ {user ? (
+  <>
+    <span>{user.name}</span>
+
+    <button
+      onClick={() => {
+        localStorage.removeItem("user");
+        window.location.reload();
+      }}
+      className="bg-gray-700 px-3 py-2 rounded-lg"
+    >
+      Logout
+    </button>
+  </>
+) : (
+  <Link
+    to="/login"
+    className="bg-red-500 px-4 py-2 rounded-lg"
+  >
+    Login
+  </Link>
+)}
       </div>
 
     </nav>
+    
   );
 }
 
