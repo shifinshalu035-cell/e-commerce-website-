@@ -1,246 +1,18 @@
-// // import axios from "axios";
-// // import { useState } from "react";
-// // import { useNavigate, Link } from "react-router-dom";
-
-// // function Login() {
-// //   const navigate = useNavigate();
-
-// //   const [email, setEmail] = useState("");
-// //   const [password, setPassword] = useState("");
-
-// //   const handleLogin = async () => {
-// //     try {
-// //       const res = await axios.get(
-// //         `http://localhost:3002/users?email=${email}&password=${password}`
-// //       );
-
-// //       console.log(res.data);
-
-// //       if (res.data.length > 0) {
-
-// //         localStorage.setItem(
-// //           "user",
-// //           JSON.stringify(res.data[0])
-// //         );
-
-// //         alert("Login Successful");
-
-// //         navigate("/");
-
-// //       } else {
-
-// //         alert(
-// //           "User not found. Please Register."
-// //         );
-
-// //         navigate("/register");
-// //       }
-
-// //     } catch (error) {
-// //       console.log(error);
-
-// //       alert("Login Failed");
-// //     }
-// //   };
-
-// //   return (
-// //     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-
-// //       <div className="bg-white w-full max-w-md p-8 rounded-2xl shadow-xl">
-
-// //         <h1 className="text-4xl font-bold text-center mb-2">
-// //           Welcome Back
-// //         </h1>
-
-// //         <p className="text-gray-500 text-center mb-8">
-// //           Login to your Stickora account
-// //         </p>
-
-// //         <input
-// //           type="email"
-// //           placeholder="Enter your email"
-// //           className="w-full border border-gray-300 rounded-lg p-3 mb-4 focus:outline-none focus:ring-2 focus:ring-red-500"
-// //           onChange={(e) =>
-// //             setEmail(e.target.value)
-// //           }
-// //         />
-
-// //         <input
-// //           type="password"
-// //           placeholder="Enter your password"
-// //           className="w-full border border-gray-300 rounded-lg p-3 mb-6 focus:outline-none focus:ring-2 focus:ring-red-500"
-// //           onChange={(e) =>
-// //             setPassword(e.target.value)
-// //           }
-// //         />
-
-// //         <button
-// //           onClick={handleLogin}
-// //           className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-semibold transition"
-// //         >
-// //           Login
-// //         </button>
-
-// //         <p className="text-center mt-6 text-gray-600">
-// //           New User?{" "}
-// //           <Link
-// //             to="/register"
-// //             className="text-red-600 font-semibold hover:underline"
-// //           >
-// //             Register Here
-// //           </Link>
-// //         </p>
-
-// //       </div>
-
-// //     </div>
-// //   );
-// // }
-
-// // export default Login;
-// import axios from "axios";
-// import { useState } from "react";
-// import { useNavigate, Link } from "react-router-dom";
-
-// function Login() {
-//   // const navigate = useNavigate();
-
-//   // const [email, setEmail] = useState("");
-//   // const [password, setPassword] = useState("");
-
-//   // const handleLogin = async () => {
-//   //   try {
-//   //     const cleanEmail = email.trim();
-//   //     const cleanPassword = password.trim();
-
-//   //     console.log("Email:", cleanEmail);
-//   //     console.log("Password:", cleanPassword);
-
-//   //     const res = await axios.get(
-//   //       `http://localhost:3002/users?email=${cleanEmail}&password=${cleanPassword}`
-//   //     );
-
-//   //     console.log("Response:", res.data);
-
-//   //     if (res.data.length > 0) {
-//   //       localStorage.setItem(
-//   //         "user",
-//   //         JSON.stringify(res.data[0])
-//   //       );
-
-//   //       alert("Login Successful");
-
-//   //       navigate("/");
-//   //     } else {
-//   //       alert(
-//   //         "User not found. Please Register."
-//   //       );
-//   //     }
-//   //   } catch (error) {
-//   //     console.log("Login Error:", error);
-
-//   //     alert("Login Failed");
-//   //   }
-//   // };
-//   const handleLogin = async () => {
-//   try {
-//     const res = await axios.get(
-//       "http://localhost:3002/users"
-//     );
-
-//     const user = res.data.find(
-//       (u) =>
-//         u.email === email.trim() &&
-//         u.password === password.trim()
-//     );
-
-//     if (user) {
-//       localStorage.setItem(
-//         "user",
-//         JSON.stringify(user)
-//       );
-
-//       alert("Login Successful");
-//       navigate("/");
-//     } else {
-//       alert("Invalid Email or Password");
-//     }
-
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
-//   return (
-//     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-//       <div className="bg-white w-full max-w-md p-8 rounded-2xl shadow-xl">
-
-//         <h1 className="text-4xl font-bold text-center mb-2">
-//           Welcome Back
-//         </h1>
-
-//         <p className="text-gray-500 text-center mb-8">
-//           Login to your Stickora account
-//         </p>
-
-//         <input
-//           type="email"
-//           placeholder="Enter your email"
-//           value={email}
-//           onChange={(e) =>
-//             setEmail(e.target.value)
-//           }
-//           className="w-full border border-gray-300 rounded-lg p-3 mb-4 focus:outline-none focus:ring-2 focus:ring-red-500"
-//         />
-
-//         <input
-//           type="password"
-//           placeholder="Enter your password"
-//           value={password}
-//           onChange={(e) =>
-//             setPassword(e.target.value)
-//           }
-//           className="w-full border border-gray-300 rounded-lg p-3 mb-6 focus:outline-none focus:ring-2 focus:ring-red-500"
-//         />
-
-//         <button
-//           onClick={handleLogin}
-//           className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-semibold transition"
-//         >
-//           Login
-//         </button>
-
-//         <p className="text-center mt-6 text-gray-600">
-//           New User?{" "}
-//           <Link
-//             to="/register"
-//             className="text-red-600 font-semibold hover:underline"
-//           >
-//             Register Here
-//           </Link>
-//         </p>
-
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Login;
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import imag from "/login.jpeg";
 
 function Login() {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = async () => {
     try {
-      const res = await axios.get(
-        "http://localhost:3002/users"
-      );
+      const res = await axios.get("http://localhost:3002/users");
 
       const user = res.data.find(
         (u) =>
@@ -249,13 +21,8 @@ function Login() {
       );
 
       if (user) {
-        localStorage.setItem(
-          "user",
-          JSON.stringify(user)
-        );
-
+        localStorage.setItem("user", JSON.stringify(user));
         alert("Login Successful");
-
         navigate("/");
       } else {
         alert("Invalid Email or Password");
@@ -267,54 +34,131 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-      <div className="bg-white w-full max-w-md p-8 rounded-2xl shadow-xl">
-
-        <h1 className="text-4xl font-bold text-center mb-2">
-          Welcome Back
+    <div
+      className="min-h-screen flex items-center justify-center bg-cover bg-center px-4"
+      style={{ backgroundImage: `url(${imag})` }}
+    >
+      <div className="
+        bg-white/70 
+        backdrop-blur-md 
+        w-full 
+        max-w-sm 
+        p-5 
+        rounded-3xl 
+        border 
+        border-white/50 
+        shadow-2xl
+      ">
+     <h1 className="text-xl font-bold text-center text-gray-950 mb-1 pixel-font">
+          Welcome Back to Stickora
         </h1>
-
-        <p className="text-gray-500 text-center mb-8">
-          Login to your Stickora account
+ <p className="text-gray-700 text-center mb-4 text-sm pixel-font">
+          Login to your account
         </p>
+        <div className="relative mb-3">
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e)=>setEmail(e.target.value)}
+            className="
+            w-full
+            bg-gray-50
+            border
+            border-gray-200
+            text-gray-900
+            rounded-full
+            pl-4
+            p-2.5
+            text-sm
+            focus:outline-none
+            focus:ring-2
+            focus:ring-sky-500
+            "
+          />
+        </div>
+<div className="relative mb-2">
+          <input
+            type={showPassword ? "text":"password"}
+            placeholder="Password"
+            value={password}
+            onChange={(e)=>setPassword(e.target.value)}
+            className="
+            w-full
+            bg-gray-50
+            border
+            border-gray-200
+            text-gray-900
+            rounded-full
+            pl-4
+            pr-10
+            p-2.5
+            text-sm
+            focus:outline-none
+            focus:ring-2
+            focus:ring-sky-500
+            "
+          />
+          <button
+            type="button"
+            onClick={()=>setShowPassword(!showPassword)}
+            className="
+            absolute
+            right-4
+            top-2.5
+            text-gray-500
+            text-sm
+            "
+          >
+          
+          </button>
+        </div>
 
-        <input
-          type="email"
-          placeholder="Enter your email"
-          value={email}
-          onChange={(e) =>
-            setEmail(e.target.value)
-          }
-          className="w-full border border-gray-300 rounded-lg p-3 mb-4 focus:outline-none focus:ring-2 focus:ring-red-500"
-        />
-
-        <input
-          type="password"
-          placeholder="Enter your password"
-          value={password}
-          onChange={(e) =>
-            setPassword(e.target.value)
-          }
-          className="w-full border border-gray-300 rounded-lg p-3 mb-6 focus:outline-none focus:ring-2 focus:ring-red-500"
-        />
-
+        
+        <div className="flex justify-end mb-4">
+          <a
+            href="#"
+            className="text-sky-700 font-medium hover:underline text-xs"
+          >
+            Forgot password?
+          </a>
+        </div>
         <button
           onClick={handleLogin}
-          className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-semibold transition"
+          className="
+          w-full
+          bg-gray-900
+          hover:bg-black
+          text-white
+          p-2.5
+          rounded-full
+          text-sm
+          font-semibold
+          transition
+          shadow-md
+          "
         >
-          Login
+          Get Started
         </button>
-
-        <p className="text-center mt-6 text-gray-600">
+        <div className="relative my-4">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-gray-300"></div>
+          </div>
+      
+        </div>
+        <p className="text-center text-gray-700 text-xs">
           New User?{" "}
           <Link
             to="/register"
-            className="text-red-600 font-semibold hover:underline"
+            className="
+            text-sky-700
+            font-bold
+            hover:underline
+            "
           >
             Register Here
           </Link>
         </p>
-
       </div>
     </div>
   );

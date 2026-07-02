@@ -25,8 +25,7 @@ function Cart() {
   `http://localhost:3002/cart?userId=${user.id}`
 );
 
-console.log("User:", user);
-console.log("Cart Data:", res.data);
+
 
 setCartItems(res.data);
     } catch (error) {

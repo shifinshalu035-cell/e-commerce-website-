@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;700&family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;600&family=Raleway:wght@300;400;500;600;700&family=Fredoka:wght@300;400;500;600;700&family=Bangers&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Pixelify+Sans:wght@400;500;700&family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&family=Tangerine:wght@400;700&family=Bitcount+Single:wght@100..900&family=Smooch+Sans:wght@100..900&display=swap');
 
 @import "tailwindcss";
 
@@ -12,4 +12,23 @@
 
 .poppins-font {
   font-family: 'Poppins', sans-serif;
+}
+.tangerine-font {
+  font-family: 'Tangerine', cursive;
+}
+.bitcount-font {
+  font-family: "Bitcount Single", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.smooch-font {
+  font-family: "Smooch Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.anton-font {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }

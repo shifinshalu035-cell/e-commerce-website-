@@ -1,10 +1,20 @@
 import { Link } from "react-router-dom";
+import image from "../assets/anime.bg.jpeg";
+import image1 from "../assets/movies.bg.jpeg";
 
 function CategorySection() {
   const categories = [
-    "Movies",
-    "Anime",
-    "Wall Art",
+    {
+     name: "Movies",
+     image: image1,
+     
+    },
+    {
+      name:"Anime",
+      image:image,
+
+    },
+   
     
     
   ];
@@ -15,19 +25,63 @@ function CategorySection() {
         Shop By Category
       </h2>
 
-      <div className="flex flex-wrap justify-center gap-6">
-        {categories.map((category) => (
-          <Link
-            key={category}
-            to={`/category/${category}`}
-            className="bg-black text-red-600 shadow-lg rounded-xl p-6 text-center hover:scale-105 hover:shadow-2xl transition cursor-pointer block"
-          >
-            <h3 className="font-bold text-lg">
-              {category}
-            </h3>
-          </Link>
-        ))}
+    <div className="flex flex-wrap justify-center gap-6">
+  {categories.map((category) => (
+    <Link
+      key={category.name}
+      to={`/category/${category.name}`}
+      className="
+        relative
+        w-40
+        h-30  
+        rounded-xl
+        overflow-hidden
+        shadow-lg
+        hover:scale-105
+        hover:shadow-2xl
+        transition
+        cursor-pointer
+        block
+        group
+      "
+      style={{
+        backgroundImage: `url(${category.image})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+
+      
+      <div className="
+        absolute 
+        inset-0 
+        bg-black/50
+        group-hover:bg-black/30
+        transition
+      "></div>
+
+
+      
+      <div className="
+        relative
+        h-full
+        flex
+        items-center
+        justify-center
+      ">
+        <h3 className="
+          text-white
+          text-2xl
+          font-bold
+          pixel-font
+        ">
+          {category.name}
+        </h3>
       </div>
+
+    </Link>
+  ))}
+</div>
     </section>
   );
 }

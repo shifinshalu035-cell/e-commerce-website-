@@ -40,6 +40,12 @@ function Wishlist() {
     }
 
     try {
+      const existing = await axios.get(`http://localhost:3002/cart?userId=${user.id}&productId=${item.productId}`);
+      if(existing.data.length > 0){
+        alert ("the item already exist in the cart");
+        return;
+        
+      }
       await axios.post(
         "http://localhost:3002/cart",
         {

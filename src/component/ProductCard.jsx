@@ -1,9 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import { motion } from "framer-motion";
 
 function ProductCard({ product }) {
-  console.log("product card render");
+  
   const navigate = useNavigate();
 
   const [image, setImage] = useState(
@@ -19,6 +20,7 @@ function ProductCard({ product }) {
   
   const handleCart = async (e) => {
        e.stopPropagation ();
+       e.preventDefault ();
   
     const user = JSON.parse(
       localStorage.getItem("user")
@@ -72,6 +74,7 @@ console.log("Product ID:", product.id);
   
   const handleWishlist = async (e) => {
      e.preventDefault ();
+     e.preventDefault();
     const user = JSON.parse(
       localStorage.getItem("user")
     );
@@ -121,7 +124,21 @@ console.log("Product ID:", product.id);
   };
 
   return (
-    <div className="bg-blend-lighten rounded-xl shadow-lg p-4 hover:shadow-2xl transition duration-300">
+    <motion.div 
+    initial={{
+  opacity: 0,
+  y: 200,
+  scale:0.5
+}}
+animate={{
+  opacity:1,
+  y:0,
+  scale:1
+}}
+transition={{
+  duration:1
+}}
+      className="bg-blend-lighten rounded-xl shadow-lg p-10 hover:shadow-2xl transition duration-300">
 
       <div
         onMouseEnter={() => {
@@ -144,20 +161,20 @@ console.log("Product ID:", product.id);
           <img
             src={image}
             alt={product.title}
-            className="w-full h-56 object-cover rounded-lg"
+            className="w-full h-50 object-cover rounded-lg"
           />
         </Link>
       </div>
 
-      <h3 className="text-xl font-bold mt-4 pixel-font">
+      <h3 className="text-sm font-bold mt-4 pixel-font">
         {product.title}
       </h3>
 
-      <p className="text-gray-500 pixel-font">
+      <p className="text-gray-500  text-xs pixel-font">
         {product.category}
       </p>
 
-      <p className="text-2xl font-bold text-green-600 mt-2">
+      <p className="text-10px font-bold text-green-300 mt-2">
         ₹{product.price}
       </p>
 
@@ -166,7 +183,7 @@ console.log("Product ID:", product.id);
         <button
           type="button"
           onClick={handleWishlist}
-          className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-lg"
+          className="  text-white px-4 py-2 rounded-lg"
         >
           ❤️
         </button>
@@ -174,7 +191,7 @@ console.log("Product ID:", product.id);
         <button
         type="button"
           onClick={handleCart}
-          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg"
+          className="  text-white px-4 py-2 rounded-lg"
         >
           🛒
         </button>
@@ -195,12 +212,12 @@ console.log("Product ID:", product.id);
 
       <Link
         to={`/product/${product.id}`}
-        className="block mt-4 bg-black text-white text-center py-2 rounded-lg hover:bg-gray-800"
+        className="block mt-4  text-black text-center py-2 rounded-lg "
       >
         View Details
       </Link>
 
-    </div>
+    </motion.div>
   );
 }
 

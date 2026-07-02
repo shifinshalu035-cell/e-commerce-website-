@@ -282,6 +282,12 @@
       "email": "man@123",
       "password": "12345",
       "id": "GrOtmnZ3JZg"
+    },
+    {
+      "name": "sha",
+      "email": "sha@gmail.com",
+      "password": "1234",
+      "id": "rAkSBHWkCgM"
     }
   ],
   "cart": [
@@ -419,6 +425,54 @@
       ],
       "quantity": 1,
       "id": "UjLbPIbuemg"
+    },
+    {
+      "userId": "v2jMTTw27B4",
+      "productId": "2",
+      "title": "Batman Logo Sticker",
+      "price": 149,
+      "image": [
+        "/cinema/movie-2 copy.jpg",
+        "/cinema/movie-2.1 copy.jpg"
+      ],
+      "quantity": 1,
+      "id": "iejs-a3oqv4"
+    },
+    {
+      "userId": "v2jMTTw27B4",
+      "productId": "3",
+      "title": "Dark Knight Quote Sticker",
+      "price": 119,
+      "image": [
+        "/cinema/movie-2.1.jpg",
+        "/cinema/movie-2.2.jpg"
+      ],
+      "quantity": 1,
+      "id": "vxtc2q4DHvA"
+    },
+    {
+      "userId": "v2jMTTw27B4",
+      "productId": "3",
+      "title": "Dark Knight Quote Sticker",
+      "price": 119,
+      "image": [
+        "/cinema/movie-2.1.jpg",
+        "/cinema/movie-2.2.jpg"
+      ],
+      "quantity": 1,
+      "id": "uheU2V_FGPk"
+    },
+    {
+      "userId": "v2jMTTw27B4",
+      "productId": "3",
+      "title": "Dark Knight Quote Sticker",
+      "price": 119,
+      "image": [
+        "/cinema/movie-2.1.jpg",
+        "/cinema/movie-2.2.jpg"
+      ],
+      "quantity": 1,
+      "id": "G_HQeN__KGw"
     }
   ],
   "wishlist": [
@@ -872,6 +926,41 @@
       "total": 448,
       "status": "Processing",
       "id": "AEgdRPtivhA"
+    },
+    {
+      "userId": "rAkSBHWkCgM",
+      "customerName": "shifin shalu",
+      "address": "Odakkal house ,kuttamangalam , mandad po",
+      "phone": "08593983704",
+      "items": [
+        {
+          "userId": "rAkSBHWkCgM",
+          "productId": "2",
+          "title": "Batman Logo Sticker",
+          "price": 149,
+          "image": [
+            "/cinema/movie-2 copy.jpg",
+            "/cinema/movie-2.1 copy.jpg"
+          ],
+          "quantity": 1,
+          "id": "T9GE277z3EI"
+        },
+        {
+          "userId": "rAkSBHWkCgM",
+          "productId": "2",
+          "title": "Batman Logo Sticker",
+          "price": 149,
+          "image": [
+            "/cinema/movie-2 copy.jpg",
+            "/cinema/movie-2.1 copy.jpg"
+          ],
+          "quantity": 1,
+          "id": "bG1K4qu9dFI"
+        }
+      ],
+      "total": 298,
+      "status": "Processing",
+      "id": "iJa68naXx1I"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
